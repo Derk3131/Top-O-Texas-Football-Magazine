@@ -1,13 +1,13 @@
 import React from 'react';
 
-const CoachPortalPage = () => {
+export default function CoachPortalPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Coach Portal</h1>
-      <p>This is the Coach Portal page. Content will be added here soon.</p>
-      {/* Add coach-specific content, forms, resources here */}
-    </div>
+    <main className="flex flex-col items-center min-h-screen p-6 md:p-12 lg:p-24 bg-gray-100 text-black">
+      <div className="w-full max-w-4xl bg-white p-8 rounded-lg shadow-lg">
+        <h1 className="text-3xl md:text-4xl font-bold mb-8 font-oswald text-center">Coach Portal</h1>
+        <p className="text-lg font-open-sans text-center">This is the Coach Portal page. Content and features for coaches will be added here soon.</p>
+        {/* Add coach-specific content, forms, resources here */}
+      </div>
+    </main>
   );
-};
-
-export default CoachPortalPage;
+}
