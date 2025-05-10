@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'; // Import Next.js Image component
 
 export default function SalesPage() {
   return (
@@ -8,12 +9,15 @@ export default function SalesPage() {
 
         {/* Magazine Promotion Section */}
         <section className="mb-12 p-6 border border-red-200 rounded-lg bg-red-50">
-          <h2 className="text-2xl font-bold mb-4 font-oswald text-red-700">Top O' Texas Football Magazine</h2>
+          <h2 className="text-2xl font-bold mb-4 font-oswald text-red-700">Top O&apos; Texas Football Magazine</h2>
           <div className="md:flex md:items-center">
-            <img src="/images/placeholder-magazine.jpg" alt="Magazine Cover" className="w-full md:w-1/3 h-auto object-cover rounded shadow-md mb-4 md:mb-0 md:mr-6"/>
-            <div>
+            <div className="relative w-full md:w-1/3 h-64 md:h-auto mb-4 md:mb-0 md:mr-6">
+              {/* Placeholder for magazine image - replace with actual image */}
+              <Image src="/images/placeholder-magazine.jpg" alt="Magazine Cover" layout="fill" objectFit="contain" className="rounded" />
+            </div>
+            <div className="md:w-2/3">
               <p className="text-gray-700 font-open-sans leading-relaxed mb-4">
-                Get exclusive insights, in-depth team previews, player spotlights, and stunning photography with your subscription to Top O' Texas Football Magazine! 
+                Get exclusive insights, in-depth team previews, player spotlights, and stunning photography with your subscription to Top O&apos; Texas Football Magazine! 
                 The ultimate companion for every Panhandle football fan.
               </p>
               <p className="text-lg font-semibold text-red-600 font-montserrat mb-2">Subscription Options:</p>
@@ -35,7 +39,9 @@ export default function SalesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Merch Item 1 */}
             <div className="bg-gray-50 p-4 rounded-lg shadow-md text-center border border-gray-200">
-              <img src="/images/placeholder-merch1.jpg" alt="T-Shirt" className="w-full h-56 object-contain rounded mb-3"/>
+              <div className="relative w-full h-56 mb-3"> {/* Container for responsive image */}
+                <Image src="/images/placeholder-merch1.jpg" alt="T-Shirt" layout="fill" objectFit="contain" className="rounded"/>
+              </div>
               <h3 className="text-xl font-semibold mb-1 font-montserrat">TOTF Logo T-Shirt</h3>
               <p className="text-gray-600 font-open-sans mb-2">Show your support! (Red, Black, White)</p>
               <p className="text-lg font-bold text-red-600 font-oswald mb-3">$24.99</p>
@@ -45,7 +51,9 @@ export default function SalesPage() {
             </div>
             {/* Merch Item 2 */}
             <div className="bg-gray-50 p-4 rounded-lg shadow-md text-center border border-gray-200">
-              <img src="/images/placeholder-merch2.jpg" alt="Hat" className="w-full h-56 object-contain rounded mb-3"/>
+              <div className="relative w-full h-56 mb-3"> {/* Container for responsive image */}
+                <Image src="/images/placeholder-merch2.jpg" alt="Hat" layout="fill" objectFit="contain" className="rounded"/>
+              </div>
               <h3 className="text-xl font-semibold mb-1 font-montserrat">TOTF Embroidered Hat</h3>
               <p className="text-gray-600 font-open-sans mb-2">Stay cool on game day. (Adjustable)</p>
               <p className="text-lg font-bold text-red-600 font-oswald mb-3">$19.99</p>
@@ -55,7 +63,9 @@ export default function SalesPage() {
             </div>
             {/* Merch Item 3 */}
             <div className="bg-gray-50 p-4 rounded-lg shadow-md text-center border border-gray-200">
-              <img src="/images/placeholder-merch3.jpg" alt="Mug" className="w-full h-56 object-contain rounded mb-3"/>
+              <div className="relative w-full h-56 mb-3"> {/* Container for responsive image */}
+                <Image src="/images/placeholder-merch3.jpg" alt="Mug" layout="fill" objectFit="contain" className="rounded"/>
+              </div>
               <h3 className="text-xl font-semibold mb-1 font-montserrat">TOTF Coffee Mug</h3>
               <p className="text-gray-600 font-open-sans mb-2">Perfect for your morning brew.</p>
               <p className="text-lg font-bold text-red-600 font-oswald mb-3">$14.99</p>
@@ -85,4 +95,3 @@ export default function SalesPage() {
     </main>
   );
 }
-

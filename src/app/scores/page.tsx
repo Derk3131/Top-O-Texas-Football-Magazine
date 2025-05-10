@@ -22,7 +22,7 @@ export default function ScoresPage() {
 
         {/* Weekly Matchups and Results */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6 font-oswald">This Week's Scores</h2>
+          <h2 className="text-2xl font-bold mb-6 font-oswald">This Week&apos;s Scores</h2>
           <div className="space-y-4">
             {weeklyScores.filter(game => game.week === 1).map((game) => (
               <div key={game.id} className="p-4 border border-gray-200 rounded-md flex flex-col sm:flex-row justify-between items-center">
@@ -62,4 +62,3 @@ export default function ScoresPage() {
     </main>
   );
 }
-

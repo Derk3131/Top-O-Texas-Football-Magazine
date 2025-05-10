@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image'; // Import Next.js Image component
 
 // Placeholder for teams data - in a real app, this would come from a backend/CMS
 const teams = [
@@ -20,7 +21,14 @@ export default function TeamsPage() {
           {teams.map((team) => (
             <Link key={team.id} href={`/teams/${team.id}`} legacyBehavior>
               <a className="block p-6 border border-gray-200 rounded-lg hover:shadow-xl transition-shadow bg-white">
-                <img src={team.logo || '/images/default-team-logo.png'} alt={`${team.name} Logo`} className="w-24 h-24 mx-auto mb-4 object-contain"/>
+                <div className="relative w-24 h-24 mx-auto mb-4"> {/* Container for responsive image */}
+                  <Image 
+                    src={team.logo || '/images/default-team-logo.png'} 
+                    alt={`${team.name} Logo`} 
+                    layout="fill" // Makes the image fill the container
+                    objectFit="contain" // Scales the image to maintain aspect ratio while filling container
+                  />
+                </div>
                 <h2 className="text-xl font-semibold font-montserrat text-center text-red-600">{team.name}</h2>
               </a>
             </Link>
@@ -31,4 +39,3 @@ export default function TeamsPage() {
     </main>
   );
 }
-

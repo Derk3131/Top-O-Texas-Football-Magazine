@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import Image from 'next/image'; // Import Next.js Image component
 
 // Placeholder for fetching article data based on slug
 async function getArticleData(slug: string) {
@@ -20,6 +21,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
 
   if (!article) {
     notFound();
+    return null; // Ensure a return after notFound for static analysis
   }
 
   return (
@@ -27,7 +29,15 @@ export default async function ArticlePage({ params }: { params: { slug: string }
       <article className="w-full max-w-4xl bg-white p-8 rounded-lg shadow-lg">
         <h1 className="text-3xl md:text-4xl font-bold mb-6 font-oswald text-center">{article.title}</h1>
         {article.image && (
-          <img src={article.image} alt={article.title} className="w-full h-auto max-h-96 object-cover rounded mb-6" />
+          <div className="relative w-full h-96 mb-6"> {/* Container for responsive image */}
+            <Image 
+              src={article.image} 
+              alt={article.title} 
+              layout="fill" // Makes the image fill the container
+              objectFit="cover" // Scales the image to maintain aspect ratio while filling container
+              className="rounded" 
+            />
+          </div>
         )}
         <div className="prose prose-lg max-w-none font-open-sans" dangerouslySetInnerHTML={{ __html: article.content.replace(/\n/g, '<br />') }} />
         {article.video && (
@@ -44,7 +54,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
                 className="w-full h-full"
               ></iframe>
             </div>
-            <p className="text-sm text-gray-600 mt-2">Video embed placeholder (e.g., HUDL or YouTube highlights)</p>
+            <p className="text-sm text-gray-600 mt-2">Video embed placeholder (e.g., HUDL or YouTube highlights) </p>
           </div>
         )}
       </article>
@@ -59,4 +69,3 @@ export default async function ArticlePage({ params }: { params: { slug: string }
 //     slug: slug,
 //   }));
 // }
-

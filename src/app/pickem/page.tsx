@@ -42,7 +42,7 @@ export default function PickEmPage() {
         <div className="w-full max-w-2xl bg-white p-8 rounded-lg shadow-lg text-center">
           <h1 className="text-3xl md:text-4xl font-bold mb-6 font-oswald">Picks Submitted!</h1>
           <p className="text-lg font-open-sans mb-4">Thank you, {userName}, for submitting your picks for this week.</p>
-          <p className="text-lg font-open-sans">We\'ve sent a confirmation to {userEmail}.</p>
+          <p className="text-lg font-open-sans">We&apos;ve sent a confirmation to {userEmail}.</p>
           <p className="text-lg font-open-sans mt-6">Check back later for results and leaderboards (feature coming soon!).</p>
         </div>
       </main>
@@ -52,7 +52,7 @@ export default function PickEmPage() {
   return (
     <main className="flex flex-col items-center min-h-screen p-6 md:p-12 lg:p-24 bg-gray-100 text-black">
       <div className="w-full max-w-3xl bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl md:text-4xl font-bold mb-8 font-oswald text-center">Weekly Pick\'em Challenge</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-8 font-oswald text-center">Weekly Pick&apos;em Challenge</h1>
         
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
@@ -82,7 +82,7 @@ export default function PickEmPage() {
           </div>
 
           <fieldset className="space-y-4">
-            <legend className="text-xl font-semibold mb-4 font-oswald">This Week\'s Games:</legend>
+            <legend className="text-xl font-semibold mb-4 font-oswald">This Week&apos;s Games:</legend>
             {weeklyGames.map((game) => (
               <div key={game.id} className="p-4 border border-gray-200 rounded-md">
                 <p className="text-lg font-semibold font-montserrat mb-2">{game.teamA} vs {game.teamB}</p>
