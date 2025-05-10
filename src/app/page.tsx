@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/image"; // Ensure Image is imported and used
 import Link from "next/link";
 
 export default function HomePage() {

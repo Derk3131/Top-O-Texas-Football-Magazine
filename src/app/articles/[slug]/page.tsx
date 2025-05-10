@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
-import Link from 'next/link'; // Import Link for internal navigation
+import Image from 'next/image'; // Ensure Image is imported
+import Link from 'next/link';
 
 // Placeholder for fetching article data based on slug
 async function getArticleData(slug: string) {
@@ -22,7 +22,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
 
   if (!article) {
     notFound();
-    return null; // Ensure function returns or throws after calling notFound()
+    return null; 
   }
 
   return (
@@ -30,7 +30,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
       <article className="w-full max-w-4xl bg-white p-8 rounded-lg shadow-lg">
         <h1 className="text-3xl md:text-4xl font-bold mb-6 font-oswald text-center">{article.title}</h1>
         {article.image && (
-          <div className="relative w-full h-96 mb-6"> {/* Container for responsive image */}
+          <div className="relative w-full h-96 mb-6"> 
             <Image src={article.image} alt={article.title} layout="fill" objectFit="cover" className="rounded" />
           </div>
         )}
@@ -38,7 +38,6 @@ export default async function ArticlePage({ params }: { params: { slug: string }
         {article.video && (
           <div className="mt-8">
             <h2 className="text-2xl font-bold mb-4 font-oswald">Video Highlight</h2>
-            {/* Placeholder for video embed - e.g., YouTube iframe */}
             <div className="aspect-w-16 aspect-h-9">
               <iframe 
                 src={`https://www.youtube.com/embed/${article.video}`} 

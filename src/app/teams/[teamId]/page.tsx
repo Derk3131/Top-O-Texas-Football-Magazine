@@ -52,10 +52,7 @@ export default async function TeamIdPage({ params }: { params: { teamId: string 
 
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4 font-oswald border-b-2 border-red-600 pb-2">Team Preview</h2>
-          <p className="text-gray-700 font-open-sans leading-relaxed">{team.preview.replace(/
-|
-|
-/g, "<br />").replace(/	/g, "&emsp;").replace(/'/g, "&apos;")}</p>
+          <p className="text-gray-700 font-open-sans leading-relaxed" dangerouslySetInnerHTML={{ __html: team.preview.replace(/\n/g, '<br />').replace(/'/g, "&apos;") }} />
         </section>
 
         <section className="mb-8">
