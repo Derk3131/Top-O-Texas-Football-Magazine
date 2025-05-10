@@ -1,17 +1,15 @@
 import Image from "next/image";
-import Link from "next/link"; // Import Link component
+import Link from "next/link";
 
 export default function HomePage() {
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-6 md:p-12 lg:p-24 bg-gray-100 text-black">
-      {/* Header/Navigation will be a separate component */}
-      
       {/* Hero Section */}
       <section className="w-full max-w-7xl mb-12 text-center">
         <div className="bg-red-600 text-white p-8 rounded-lg shadow-lg">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 font-oswald">TOP STORY HEADLINE</h1>
-          <div className="relative w-full h-96 mb-4"> {/* Container for responsive image */}
-            <Image src="/images/placeholder-hero.jpg" alt="Top Story Image" layout="fill" objectFit="cover" className="rounded"/>
+          <div className="relative w-full h-96 mb-4">
+            <Image src="/images/placeholder-hero.jpg" alt="Top Story Image" layout="fill" objectFit="cover" className="rounded" priority />
           </div>
           <p className="text-lg md:text-xl mb-6 font-open-sans">This is a teaser for the top story. It provides a brief overview of the article content, enticing users to read more.</p>
           <Link href="/articles/top-story" legacyBehavior>
@@ -28,7 +26,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Article Card 1 */}
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="relative w-full h-48 mb-4"> {/* Container for responsive image */}
+            <div className="relative w-full h-48 mb-4">
               <Image src="/images/placeholder-article.jpg" alt="Article Image 1" layout="fill" objectFit="cover" className="rounded"/>
             </div>
             <h3 className="text-xl font-semibold mb-2 font-oswald">Article Title 1</h3>
@@ -39,7 +37,7 @@ export default function HomePage() {
           </div>
           {/* Article Card 2 */}
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="relative w-full h-48 mb-4"> {/* Container for responsive image */}
+            <div className="relative w-full h-48 mb-4">
               <Image src="/images/placeholder-article.jpg" alt="Article Image 2" layout="fill" objectFit="cover" className="rounded"/>
             </div>
             <h3 className="text-xl font-semibold mb-2 font-oswald">Article Title 2</h3>
@@ -50,7 +48,7 @@ export default function HomePage() {
           </div>
           {/* Article Card 3 */}
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="relative w-full h-48 mb-4"> {/* Container for responsive image */}
+            <div className="relative w-full h-48 mb-4">
               <Image src="/images/placeholder-article.jpg" alt="Article Image 3" layout="fill" objectFit="cover" className="rounded"/>
             </div>
             <h3 className="text-xl font-semibold mb-2 font-oswald">Article Title 3</h3>
@@ -89,8 +87,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Footer will be a separate component */}
     </main>
   );
 }

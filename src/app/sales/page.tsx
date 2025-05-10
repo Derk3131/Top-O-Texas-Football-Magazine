@@ -1,18 +1,17 @@
 import React from 'react';
-import Image from 'next/image'; // Import Next.js Image component
+import Image from 'next/image';
 
 export default function SalesPage() {
   return (
     <main className="flex flex-col items-center min-h-screen p-6 md:p-12 lg:p-24 bg-gray-100 text-black">
       <div className="w-full max-w-4xl bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl md:text-4xl font-bold mb-8 font-oswald text-center">Magazine & Merchandise</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-8 font-oswald text-center">Magazine &amp; Merchandise</h1>
 
         {/* Magazine Promotion Section */}
         <section className="mb-12 p-6 border border-red-200 rounded-lg bg-red-50">
           <h2 className="text-2xl font-bold mb-4 font-oswald text-red-700">Top O&apos; Texas Football Magazine</h2>
           <div className="md:flex md:items-center">
             <div className="relative w-full md:w-1/3 h-64 md:h-auto mb-4 md:mb-0 md:mr-6">
-              {/* Placeholder for magazine image - replace with actual image */}
               <Image src="/images/placeholder-magazine.jpg" alt="Magazine Cover" layout="fill" objectFit="contain" className="rounded" />
             </div>
             <div className="md:w-2/3">
@@ -39,7 +38,7 @@ export default function SalesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Merch Item 1 */}
             <div className="bg-gray-50 p-4 rounded-lg shadow-md text-center border border-gray-200">
-              <div className="relative w-full h-56 mb-3"> {/* Container for responsive image */}
+              <div className="relative w-full h-56 mb-3">
                 <Image src="/images/placeholder-merch1.jpg" alt="T-Shirt" layout="fill" objectFit="contain" className="rounded"/>
               </div>
               <h3 className="text-xl font-semibold mb-1 font-montserrat">TOTF Logo T-Shirt</h3>
@@ -51,7 +50,7 @@ export default function SalesPage() {
             </div>
             {/* Merch Item 2 */}
             <div className="bg-gray-50 p-4 rounded-lg shadow-md text-center border border-gray-200">
-              <div className="relative w-full h-56 mb-3"> {/* Container for responsive image */}
+              <div className="relative w-full h-56 mb-3">
                 <Image src="/images/placeholder-merch2.jpg" alt="Hat" layout="fill" objectFit="contain" className="rounded"/>
               </div>
               <h3 className="text-xl font-semibold mb-1 font-montserrat">TOTF Embroidered Hat</h3>
@@ -63,7 +62,7 @@ export default function SalesPage() {
             </div>
             {/* Merch Item 3 */}
             <div className="bg-gray-50 p-4 rounded-lg shadow-md text-center border border-gray-200">
-              <div className="relative w-full h-56 mb-3"> {/* Container for responsive image */}
+              <div className="relative w-full h-56 mb-3">
                 <Image src="/images/placeholder-merch3.jpg" alt="Mug" layout="fill" objectFit="contain" className="rounded"/>
               </div>
               <h3 className="text-xl font-semibold mb-1 font-montserrat">TOTF Coffee Mug</h3>
