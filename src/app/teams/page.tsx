@@ -29,12 +29,11 @@ export default function TeamsPage() {
                     objectFit="contain" // Scales the image to maintain aspect ratio while filling container
                   />
                 </div>
-                <h2 className="text-xl font-semibold font-montserrat text-center text-red-600">{team.name}</h2>
+                <h2 className="text-xl font-semibold text-center font-montserrat">{team.name}</h2>
               </a>
             </Link>
           ))}
         </div>
-        <p className="text-xs text-gray-500 mt-8 text-center font-open-sans">Team subpages will include roster info, coach-submitted content, photos/videos, and a team preview.</p>
       </div>
     </main>
   );
