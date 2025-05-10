@@ -1,6 +1,12 @@
 import { notFound } from 'next/navigation';
-import Image from 'next/image'; // Ensure Image is imported
+import Image from 'next/image';
 import Link from 'next/link';
+
+// Define Props type for the page
+type Props = {
+  params: { slug: string };
+  // searchParams?: { [key: string]: string | string[] | undefined }; // Include if you use searchParams in the future
+};
 
 // Placeholder for fetching article data based on slug
 async function getArticleData(slug: string) {
@@ -17,7 +23,7 @@ async function getArticleData(slug: string) {
   return null;
 }
 
-export default async function ArticlePage({ params }: { params: { slug: string } }) {
+export default async function ArticlePage({ params }: Props) { // Use the defined Props type here
   const article = await getArticleData(params.slug);
 
   if (!article) {
@@ -65,7 +71,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
 
 // Optional: Generate static paths if you know all slugs at build time
 // export async function generateStaticParams() {
-//   const articles = [top-story', 'article-1', 'article-2', 'article-3']; // Example slugs
+//   const articles = ['top-story', 'article-1', 'article-2', 'article-3']; // Example slugs
 //   return articles.map((slug) => ({
 //     slug: slug,
 //   }));
