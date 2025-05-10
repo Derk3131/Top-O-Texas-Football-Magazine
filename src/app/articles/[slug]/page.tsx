@@ -1,12 +1,10 @@
 // src/app/articles/[slug]/page.tsx
-import { notFound } from 'next/navigation';
+// Removed 'notFound' import as it's not used in this simplified version
 
 export default async function ArticlePage({ params }: { params: { slug: string } }) {
   // Basic check to ensure params.slug is used and avoid unused variable warnings
   if (!params || !params.slug) {
     // In a real scenario, you might want to handle this case explicitly
-    // For now, we'll assume Next.js routing ensures slug is present
-    // or call notFound() if appropriate.
     // For this test, let's assume slug is always provided if the route matches.
   }
 
@@ -23,4 +21,3 @@ export default async function ArticlePage({ params }: { params: { slug: string }
 //   // Example: return a list of possible slug values
 //   return [{ slug: 'test-article' }, { slug: 'another-article' }];
 // }
-
