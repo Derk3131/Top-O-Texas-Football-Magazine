@@ -11,8 +11,7 @@ type ArticlePageProps = {
 // Placeholder for fetching article data based on slug
 async function getArticleData(slug: string) {
   const articles: { [key: string]: { title: string; content: string; image?: string; video?: string } } = {
-    'top-story
-': { title: 'Top Story Headline', content: 'Full content of the top story...', image: '/images/placeholder-hero.jpg' },
+    'top-story': { title: 'Top Story Headline', content: 'Full content of the top story...', image: '/images/placeholder-hero.jpg' }, // Corrected this line
     'article-1': { title: 'Article Title 1', content: 'Full content of article 1...', image: '/images/placeholder-article.jpg' },
     'article-2': { title: 'Article Title 2', content: 'Full content of article 2...', image: '/images/placeholder-article.jpg' },
     'article-3': { title: 'Article Title 3', content: 'Full content of article 3...', image: '/images/placeholder-article.jpg' },
@@ -41,8 +40,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             <Image src={article.image} alt={article.title} layout="fill" objectFit="cover" className="rounded" />
           </div>
         )}
-        <div className="prose prose-lg max-w-none font-open-sans" dangerouslySetInnerHTML={{ __html: article.content.replace(/\n/g, '<br />').replace(/
-'/g, '&apos;') }} />
+        <div className="prose prose-lg max-w-none font-open-sans" dangerouslySetInnerHTML={{ __html: article.content.replace(/\n/g, '<br />').replace(/'/g, '&apos;') }} />
         {article.video && (
           <div className="mt-8">
             <h2 className="text-2xl font-bold mb-4 font-oswald">Video Highlight</h2>
@@ -73,8 +71,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
 // Optional: Generate static paths if you know all slugs at build time
 // export async function generateStaticParams() {
-//   const articles = ['top-story
-', 'article-1', 'article-2', 'article-3']; // Example slugs
+//   const articles = ['top-story', 'article-1', 'article-2', 'article-3']; // Corrected this line
 //   return articles.map((slug) => ({
 //     slug: slug,
 //   }));
