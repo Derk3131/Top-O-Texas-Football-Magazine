@@ -1,27 +1,19 @@
 {
-  "name": "my-nextjs-app",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+  // ... (other parts of your package.json like name, scripts)
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next": "^14.2.3"
   },
   "devDependencies": {
     "typescript": "^5",
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@tailwindcss/postcss": "^4", // This seems to be a non-standard package name, usually it's just tailwindcss
+    "tailwindcss": "^4", // tailwindcss v4 is also very new, but let's leave it for now unless it causes issues later
     "eslint": "^9",
-    "eslint-config-next": "15.3.2",
+    "eslint-config-next": "^14.2.3",
     "@eslint/eslintrc": "^3"
   }
 }
